@@ -1,0 +1,23 @@
+import java.util.*;
+
+class Program {
+  public static int[] twoNumberSum(int[] array, int targetSum) {
+    // Write your code here.
+    //arr[1,2,3,4,5]   -> [7] - >{5,7 }
+    //Hmap - > 6,5,4,3,2  === 
+    
+    Set<Integer> se =new HashSet<Integer>();
+    for(int i=0;i<array.length;i++)
+     {
+        int diff = targetSum - array[i];
+        if(se.contains(diff)){
+            return new int[]{array[i],diff};
+         }
+        else{
+           se.add(array[i]);
+          }
+      
+      }
+     return new int[0];
+  }
+}

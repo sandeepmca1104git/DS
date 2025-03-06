@@ -10,4 +10,25 @@ class Program {
            } 
     return ans;
   }
+// O(n) -O(nlogn) -O(n)
+
+int start=0,end=array.length-1,count=array.length-1;
+int[] ans;
+
+for(int i=0;i<array.length-1;i++)
+{
+   if(Math.mod(arr[start]) > Math.mod(arr[end]))
+    {
+      ans[count-i]=arr[start]*arr[start];
+      start++;  
+    }
+   else
+    {
+      ans[count-i] = arr[end]*arr[end];
+      end--;
+    }
+
+  
+}
+
 }

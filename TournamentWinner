@@ -1,0 +1,30 @@
+import java.util.*;
+
+class Program {
+  public String tournamentWinner(
+    ArrayList<ArrayList<String>> competitions, ArrayList<Integer> results
+  ) {
+    String maxScoreStringKey ="";
+    int maxKeyScoreValue =0;
+    HashMap<String,Integer> score =new HashMap<>();
+    for (int i=0;i<=results.size()-1;i++)
+    {
+
+      int resultIndex = results.get(i)==0?1:0;
+      String resultValue = competitions.get(i).get(resultIndex);
+      if(!score.containsKey(resultValue)){
+        score.put(resultValue,3);
+      }
+      else {
+        score.put(resultValue,score.get(resultValue)+3);
+      }
+
+      if(maxKeyScoreValue < score.get(resultValue)){
+        maxKeyScoreValue = score.get(resultValue);
+        maxScoreStringKey = resultValue;
+      }
+    }
+    return maxScoreStringKey;
+  }
+  }
+
